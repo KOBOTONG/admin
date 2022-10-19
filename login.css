@@ -1,0 +1,39 @@
+body {
+	background-image: linear-gradient(130deg,#FDFF00,#E1FFB1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+* {
+	box-sizing: border-box;
+	font-family: 'Alkalami', serif;
+   
+}
+
+form {
+	width: 500px;
+	border: 2px solid #ccc;
+	padding: 30px;
+	background: #F8EDE3;
+	border-radius: 15px;
+}
+h2{
+	text-align: center;
+	margin-bottom: 100px;
+    font-family: 'Alkalami', serif;
+}
+
+input {
+  
+  display: block;
+  border: 2px solid #ccc;
+  width:95%;
+  padding:10px;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+p{
+  text-align: center;
+}
