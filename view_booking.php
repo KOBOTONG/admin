@@ -1,11 +1,11 @@
 <?php 
 
     session_start();
-    require_once 'config/db.php';
+    require_once 'conec.php';
     if (!isset($_SESSION['admin_login'])) {
         echo "<script>alert('กรุณาเข้าสู่ระบบ!');</script>";
         echo "<script>window.location.href='login.php'</script>";
-    }
+    }else {
 
 ?>
 
@@ -22,15 +22,7 @@
 </head>
 <body>
     <div class="container">
-        <?php 
-
-            if (isset($_SESSION['admin_login'])) {
-                $admin_id = $_SESSION['admin_login'];
-                $stmt = $conn->query("SELECT * FROM `personnnel` WHERE id = $admin_id");
-                $stmt->execute();
-                $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            }
-        ?>
+        
         <h1>Welcome to Admin Panel</h1>
         
         <section class="content">
@@ -42,8 +34,41 @@
                 
             </div>
             <div class="showinfo">
+           <br>
+                <tr>
+                    <th>NO</th>
+                    <th>Licsen Plate</th>
+                    <th>Firstname</th>
+                                
+                </tr>
+                </br>
+                <?php
+               
+                    $select_post = "SELECT * FROM booking order by 1 DESC";
+
+                    $query_post = mysqli_query($conn, $select_post);
+
+                    while ($row = mysqli_fetch_array($query_post)) {
+                        $id = $row['nobook'];
+                        $licsen = $row['usernamebook'];
+                        $name = $row['fnamebook'];
+                        $status = $row['status'];
+                        $slip = $row['slip'];
+                        
+                ?>
+                <br>
+                <tr>
                 
-                <h3 class="mt-4">Welcome Admin, <?php echo $row['name'] . ' ' . $row['lastname'] ?></h3>
+                <td><?php echo $id; ?></td>
+                        <td><?php echo $licsen; ?></td>
+                        <td><?php echo $name; ?></td>
+                        <td><?php echo $status; ?></td>
+                        <td><img width="100"  src="<?php echo $slip; ?>"></td>
+                                 
+                </tr> </br>   
+<?php
+ }  ?>  
+            
                 
             </div>
         </div>
@@ -52,3 +77,6 @@
     </div>
 </body>
 </html>
+<?php
+}
+?>   

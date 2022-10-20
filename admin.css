@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 3rem;
+    background: #333;
+    text-align: center;
+}
+header h1 {
+    color: #fff;
+    font-size: 3rem;
+}
+
+.content {
+    padding: 2rem;
+}
+
+.content__grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+.sidebar {
+    text-align: center;
+    padding: 2rem;
+    border: 2px solid #e4e4e4;
+}
+
+.showinfo {
+    padding: 2rem;
+    border: 2px solid #333;
+    background-color: #333;
+}
+table, th, td {
+    border: 1px solid;
+  }
