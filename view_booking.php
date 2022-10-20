@@ -16,8 +16,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Page</title>
-    <link rel="stylesheet" type="text/css" href="admin.css">
+    <title>View Booking</title>
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
@@ -28,23 +28,32 @@
         <section class="content">
         <div class="content__grid">
             <div class="sidebar">
-               <img src="Admin-cuate.png"class = "img1" width="200px" >
-                <h3><a href="admin.php">Home</a></h3>
-                <h3><a href="view_booking.php">View Booking</a></h3>
+               
+                <h3><a href="admin.php">Home</a>          <a href="view_booking.php">Booking</a></h3>
+            
                 
             </div>
             <div class="showinfo">
-           <br>
+            <h2>Booking</h2>
+                <table class="table">
+                <thead class="thead-dark">
+           
                 <tr>
                     <th>NO</th>
                     <th>Licsen Plate</th>
-                    <th>Firstname</th>
-                                
+                    <th>Name</th>
+                    <th>Start</th>
+                    <th>Year</th>
+                    <th>Details</th>
+                    <th>Status</th>
+                    <th>Slip</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
-                </br>
+                </thead>
                 <?php
                
-                    $select_post = "SELECT * FROM booking order by 1 DESC";
+                    $select_post = "SELECT * FROM booking ";
 
                     $query_post = mysqli_query($conn, $select_post);
 
@@ -52,23 +61,34 @@
                         $id = $row['nobook'];
                         $licsen = $row['usernamebook'];
                         $name = $row['fnamebook'];
+                        $lname = $row['lnamebook'];
+                        $stmo = $row['stmonth'];
+                        $styer = $row['styear'];
+                        $tomo = $row['tomonth'];
+                        $toyer = $row['toyear'];
+                        $detail = $row['resultmy'];
                         $status = $row['status'];
                         $slip = $row['slip'];
                         
                 ?>
-                <br>
+                
                 <tr>
                 
                 <td><?php echo $id; ?></td>
                         <td><?php echo $licsen; ?></td>
-                        <td><?php echo $name; ?></td>
+                        <td><?php echo $name; ?> <?php echo $lname; ?></td>
+                        <td><?php echo $stmo; ?> <?php echo $styer; ?></td>
+                        <td><?php echo $tomo; ?> <?php echo $toyer; ?></td>
+                        <td><?php echo $detail; ?></td>
                         <td><?php echo $status; ?></td>
                         <td><img width="100"  src="<?php echo $slip; ?>"></td>
+                        <td><a href="edit_booking.php?edit=<?php echo $id; ?>" class="btn btn-warning">Edit</a></td>
+                        <td><a href=" " class="btn btn-danger">Delete</a></td>
                                  
-                </tr> </br>   
+                </tr>   
 <?php
  }  ?>  
-            
+                </table>
                 
             </div>
         </div>

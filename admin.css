@@ -10,7 +10,7 @@
 }
 
 header {
-    padding: 3rem;
+    padding: 2rem;
     background: #333;
     text-align: center;
 }
@@ -20,7 +20,7 @@ header h1 {
 }
 
 .content {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .content__grid {
@@ -30,12 +30,12 @@ header h1 {
 
 .sidebar {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     border: 2px solid #e4e4e4;
 }
 
 .showinfo {
-    padding: 2rem;
+    padding: 1rem;
     border: 2px solid #333;
     background-color: #333;
 }

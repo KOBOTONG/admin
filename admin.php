@@ -38,7 +38,7 @@
             <div class="sidebar">
                <img src="Admin-cuate.png"class = "img1" width="200px" >
                 <h3><a href="admin.php">Home</a></h3>
-                <h3><a href="view_booking.php">View Booking</a></h3>
+                <h3><a href="view_booking.php">Booking</a></h3>
                 
             </div>
             <div class="showinfo">
