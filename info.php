@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Booking</title>
+    <title>Information Customer</title>
     <link rel="stylesheet" type="text/css" href="book1.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Josefin+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
             
             
          <div class="text-center mt-2">      
-        <h1>Booking Details </h1>
+        <h1>Information Customer</h1>
         </div> 
         <section class="content">
         <div class="content__grid">
@@ -52,33 +52,31 @@
                     <th>NO</th>
                     <th>Licsen Plate</th>
                     <th>Name</th>
-                    <th>Start</th>
-                    <th>Year</th>
-                    <th>Details</th>
-                    <th>Status</th>
-                    <th>Slip</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Mail</th>
+                   
+                    <th>Phone</th>
+                    <th>Idenficical</th>
+                    <th>vehicle</th>
+                    
                 </tr>
                 </thead>
                 <?php
                
-                    $select_post = "SELECT * FROM booking ";
+                    $select_post = "SELECT * FROM `acc_user` ";
 
                     $query_post = mysqli_query($conn, $select_post);
 
                     while ($row = mysqli_fetch_array($query_post)) {
-                        $id = $row['nobook'];
-                        $licsen = $row['usernamebook'];
-                        $name = $row['fnamebook'];
-                        $lname = $row['lnamebook'];
-                        $stmo = $row['stmonth'];
-                        $styer = $row['styear'];
-                        $tomo = $row['tomonth'];
-                        $toyer = $row['toyear'];
-                        $detail = $row['resultmy'];
-                        $status = $row['status'];
-                        $slip = $row['slip'];
+                        $id = $row['no'];
+                        $licsen = $row['username'];
+                        $fname = $row['fname'];
+                        $lname = $row['lname'];
+                        $mailuser = $row['mailuser'];
+                        $pass = $row['passuser'];
+                        $phone = $row['phone'];
+                        $iden = $row['iden'];
+                        $vehi = $row['vehicle'];
+                        
                         
                 ?>
                 
@@ -86,14 +84,12 @@
                 
                 <td><?php echo $id; ?></td>
                         <td><?php echo $licsen; ?></td>
-                        <td><?php echo $name; ?> <?php echo $lname; ?></td>
-                        <td><?php echo $stmo; ?> <?php echo $styer; ?></td>
-                        <td><?php echo $tomo; ?> <?php echo $toyer; ?></td>
-                        <td><?php echo $detail; ?></td>
-                        <td><?php echo $status; ?></td>
-                        <td><img width="200"  src="<?php echo $slip; ?>"></td>
-                        <td><a href="edit_booking.php?edit=<?php echo $id; ?>" class="btn btn-success">Edit</a></td>
-                        <td><a href="del_booking.php?del=<?php echo $id; ?>" class="btn btn-warning">Delete</a></td>
+                        <td><?php echo $fname; ?> <?php echo $lname; ?></td>
+                        <td><?php echo $mailuser; ?></td>
+                        <td><?php echo $phone; ?></td>
+                        <td><img width="200"  src="<?php echo $iden; ?>"></td>
+                        <td><img width="200"  src="<?php echo $vehi; ?>"></td>
+                        <td><a href="del_info.php?del=<?php echo $id; ?>" class="btn btn-warning">Delete</a></td>
                                  
                 </tr>   
 <?php

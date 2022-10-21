@@ -4,10 +4,11 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	
 }
 * {
 	box-sizing: border-box;
-	font-family: 'Alkalami', serif;
+	font-family: 'Josefin Sans', sans-serif;
    
 }
 
@@ -21,7 +22,7 @@ form {
 h2{
 	text-align: center;
 	margin-bottom: 100px;
-    font-family: 'Alkalami', serif;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 input {

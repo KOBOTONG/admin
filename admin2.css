@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+
+}
+body{background-image: linear-gradient(90deg,#FDFF00,#E1FFB1);
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+h1{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: larger;
+    text-align: center;
+    padding-top: 10%;
+   
+}
+.img1 {
+    position: absolute;
+    top: 30%;
+    right: 55%;
+    
+   }
+.img2 {
+    position: absolute;
+    top: 30%;
+    right: 30%;
+    
+   }
+h3{ font-family: 'Josefin Sans', sans-serif;
+    padding-left: 25%;
+    padding-top: 20%;
+    
+   
+}
+.button1 {position: absolute;
+  background-color: #c83434;
+  border-radius:30px;
+  height:60px;
+  width: 100px;
+  color: #F8EDE3;
+  font-weight:bold;
+  cursor:pointer;
+  transition: 0.2s;
+  top: 85%;
+  right: 10%;
+  
+ 
+}
+.button1:hover {
+  background-color: #cf482d;
+  color: #E8E6E6;
+}
+.button {position: absolute;
+    background-color: #9000ce;
+    border-radius:30px;
+    height:50px;
+    width: 250px;
+    color: #F8EDE3;
+    font-weight:bold;
+    cursor:pointer;
+    transition: 0.5s;
+    font-family: 'Josefin Sans', sans-serif;
+    left: 29%;
+    top: 65%;
+    
+   
+  }
+  .button:hover {
+    background-color: #8096cc;
+    color: #E8E6E6;
+  }
+  
+  .button2 {position: absolute;
+    background-color: #9000ce;
+    border-radius:30px;
+    height:50px;
+    width: 250px;
+    color: #F8EDE3;
+    font-weight:bold;
+    cursor:pointer;
+    transition: 0.5s;
+    font-family: 'Josefin Sans', sans-serif;
+    left: 54%;
+    top: 65%;
+    
+   
+  }
+  .button2:hover {
+    background-color: #8096cc;
+    color: #E8E6E6;
+  }
+  

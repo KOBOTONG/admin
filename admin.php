@@ -17,9 +17,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Page</title>
-    <link rel="stylesheet" type="text/css" href="admin.css">
+    <link rel="stylesheet" type="text/css" href="admin2.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Josefin+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet"></head>
+
 <body>
     <div class="container">
         <?php 
@@ -31,24 +32,27 @@
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
             }
         ?>
-        <h1>Welcome to Admin Panel</h1>
+        <h1 >Welcome Admin, <?php echo $row['name'] . ' ' . $row['lastname'] ?></h1>
+        <br>
         
-        <section class="content">
-        <div class="content__grid">
-            <div class="sidebar">
-               <img src="Admin-cuate.png"class = "img1" width="200px" >
-                <h3><a href="admin.php">Home</a></h3>
-                <h3><a href="view_booking.php">Booking</a></h3>
+               <img src="Admin-cuate.png"class = "img1" width="250px" >
+               <img src="Toggle-bro.png"class = "img2" width="250px" ></br>
+              <form action="info.php" >
+                <button name="submit" class="button"> Information Customer</button>
+            </form> 
+               
+                <form action="view_booking.php" >
+                <button name="submit" class="button2">Booking Details </button>
+            </form> 
                 
-            </div>
-            <div class="showinfo">
+               
+             
                 
-                <h3 class="mt-4">Welcome Admin, <?php echo $row['name'] . ' ' . $row['lastname'] ?></h3>
-                
-            </div>
-        </div>
-    </section>
-        <a href="logout.php" class="btn btn-danger">Logout</a>
+            
+    <form action="logout.php">
+<button name="submit" class="button1"> Log out</button>
+
+</form>
     </div>
 </body>
 </html>
