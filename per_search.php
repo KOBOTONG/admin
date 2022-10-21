@@ -4,7 +4,8 @@ require_once 'config/db.php';
 if (!isset($_SESSION['personnel_login'])) {
     $_SESSION['error'] = 'กรุณาเข้าสู่ระบบ!';
     header('location: login.php');
-}?>
+}
+?>
 <html>
 <head>
 	
@@ -62,8 +63,8 @@ if (isset($_SESSION['personnel_login'])) {
         </form >
     
     </div>
-    <form action="searchData.php">
-    <button name="checkin" class="button" value="1">  check-in </button>
+    <form action="checkin.php">
+    <button name="in" class="button" >  check-in </button>
 </form>
 <form action="per_check.php">
     <button name="checkout" class="button1" value="0">  check-out </button>

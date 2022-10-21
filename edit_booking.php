@@ -27,7 +27,7 @@ if (isset($_GET['edit'])) {
     }
 }
 if (isset($_POST['submit'])) {
-    $id =  $_GET['nobook'];
+    $update_id = $_GET['edit_form'];
  $licsen = $_POST['usernamebook'];
  $fname =  $_POST['fnamebook'];
  $lname =  $_POST['lnamebook'];
@@ -40,8 +40,8 @@ if (isset($_POST['submit'])) {
 
 
 
- $update_query = "UPDATE `booking` SET `stmonth`='$stmo',`styear`='$styer',`tomonth`='$tomo',
-                 `toyear`='$toyer',`status`='$status' WHERE `nobook`='$id'";
+ $update_query = "UPDATE booking SET stmonth='$stmo',styear='$styer',tomonth='$tomo',
+                 toyear='$toyer',status='$status' WHERE nobook='$update_id'";
     if (mysqli_query($conn, $update_query)) {
         echo "<script>alert('Post has been updated');</script>";
         header("location: view_booking.php");
