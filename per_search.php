@@ -5,6 +5,7 @@ if (!isset($_SESSION['personnel_login'])) {
     $_SESSION['error'] = 'กรุณาเข้าสู่ระบบ!';
     header('location: login.php');
 }
+
 ?>
 <html>
 <head>
@@ -38,6 +39,7 @@ if (isset($_SESSION['personnel_login'])) {
     $stmt->execute();
     $sum = $stmt->fetch(PDO::FETCH_ASSOC);
 }
+ 
 ?>
         <h2> Check data user by <?php echo $sum['username_per']; ?></h2>
     
@@ -49,6 +51,7 @@ if (isset($_SESSION['personnel_login'])) {
         <h3 class="mt-5">End : <?php echo  $row->tomonth; ?>     <?php echo $row->toyear; ?></h3> 
         <h3 class="mt-5">Detail : <?php echo $row->resultmy; ?></h3>
         <h3 class="mt-5">Status : <?php echo  $row->status ?></h3>
+        <h3 class="mt-5">Status Parking : <?php echo  $row->parking ?></h3>
       
         
  
@@ -63,7 +66,8 @@ if (isset($_SESSION['personnel_login'])) {
         </form >
     
     </div>
-    <form action="checkin.php">
+   
+    <form action="per_search.php">
     <button name="in" class="button" >  check-in </button>
 </form>
 <form action="per_check.php">

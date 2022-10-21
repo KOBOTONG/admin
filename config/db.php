@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Kolkata');
     $servername = "localhost";
     $username = "dbsafespace";
     $password = "mt123456789";
