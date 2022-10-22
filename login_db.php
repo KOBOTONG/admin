@@ -40,7 +40,7 @@
                                 header("location: admin.php");
                             } else {
                                 $_SESSION['personnel_login'] = $row['id'];
-                                header("location: per_check.php");
+                                header("location: view_check.php");
                             }
                         } else {                           
                             echo "<script>alert('รหัสผ่านผิด!');</script>";

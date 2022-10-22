@@ -40,11 +40,8 @@ if (!isset($_SESSION['admin_login'])) {
 
             <div class="text-center mt-2">
                 <h1>Booking Details </h1>
-                <form action="search.php" method="get" enctype="multipart/form-data">
-                    <br></br>
-                    <input type="text" name="value" placeholder="Booking licsenplate" >               
-                <button type="submit" name="search" value="search" class="button4">search </button>
-                    
+
+
                 </form>
             </div>
             <section class="content">
@@ -60,53 +57,56 @@ if (!isset($_SESSION['admin_login'])) {
                                     <th>NO</th>
                                     <th>Licsen Plate</th>
                                     <th>Name</th>
-                                    <th>Start</th>
-                                    <th>Year</th>
-                                    <th>Details</th>
-                                    <th>Status</th>
-                                    <th>Slip</th>
-                                    <th>Edit</th>
+                                    <th>Mail</th>
+
+                                    <th>Phone</th>
+                                    <th>Idenficical</th>
+                                    <th>vehicle</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
                             <?php
-                            
+                            if (isset($_GET['search'])) {
+                                $search_value = $_REQUEST['value'];
+                            }
+                            if (empty($search_value)) {
+                                echo "<h3 style='margin-top:2rem; text-align: center; color:red;'>Oops!!, can not find any data type someting</h3>";
+                            } else {
+                                $search_query = "SELECT * FROM acc_user WHERE username LIKE '%$search_value%'";
 
-                            $select_post = "SELECT * FROM booking ";
 
-                            $query_post = mysqli_query($conn, $select_post);
+                                $run_query = mysqli_query($conn, $search_query);
 
-                            while ($row = mysqli_fetch_array($query_post)) {
-                                $id = $row['nobook'];
-                                $licsen = $row['usernamebook'];
-                                $name = $row['fnamebook'];
-                                $lname = $row['lnamebook'];
-                                $stmo = $row['stmonth'];
-                                $styer = $row['styear'];
-                                $tomo = $row['tomonth'];
-                                $toyer = $row['toyear'];
-                                $detail = $row['resultmy'];
-                                $status = $row['status'];
-                                $slip = $row['slip'];
+                                while ($search_row = mysqli_fetch_array($run_query)) {
+
+                                    $id = $search_row['no'];
+                                    $licsen = $search_row['username'];
+                                    $fname = $search_row['fname'];
+                                    $lname = $search_row['lname'];
+                                    $mailuser = $search_row['mailuser'];
+                                    $pass = $search_row['passuser'];
+                                    $phone = $search_row['phone'];
+                                    $iden = $search_row['iden'];
+                                    $vehi = $search_row['vehicle'];
 
                             ?>
 
-                                <tr>
+                                    <tr>
+                                        <td><?php echo $id; ?></td>
+                                        <td><?php echo $licsen; ?></td>
+                                        <td><?php echo $fname; ?> <?php echo $lname; ?></td>
+                                        <td><?php echo $mailuser; ?></td>
+                                        <td><?php echo $phone; ?></td>
+                                        <td><img width="200" src="<?php echo $iden; ?>"></td>
+                                        <td><img width="200" src="<?php echo $vehi; ?>"></td>
+                                        <td><a href="del_info.php?del=<?php echo $id; ?>" class="btn btn-warning">Delete</a></td>
 
-                                    <td><?php echo $id; ?></td>
-                                    <td><?php echo $licsen; ?></td>
-                                    <td><?php echo $name; ?> <?php echo $lname; ?></td>
-                                    <td><?php echo $stmo; ?> <?php echo $styer; ?></td>
-                                    <td><?php echo $tomo; ?> <?php echo $toyer; ?></td>
-                                    <td><?php echo $detail; ?></td>
-                                    <td><?php echo $status; ?></td>
-                                    <td><img width="200" src="<?php echo $slip; ?>"></td>
-                                    <td><a href="edit_booking.php?edit=<?php echo $id; ?>" class="btn btn-success">Edit</a></td>
-                                    <td><a href="del_booking.php?del=<?php echo $id; ?>" class="btn btn-warning">Delete</a></td>
 
-                                </tr>
+
+                                    </tr>
                             <?php
-                            }  ?>
+                                }
+                            } ?>
                         </table>
                         <form action="logout.php">
                             <button name="submit" class="button1"> Log out</button>

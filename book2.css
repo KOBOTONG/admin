@@ -99,3 +99,15 @@ h1{
     width:250px;
     transition: .5s;
   }
+  .button4{
+    background-color: #256D85;
+    border-radius:30px;
+    height:50px;
+    color: #F8EDE3;
+    font-weight:bold;
+    cursor:pointer;
+    transition: 0.5s;
+  }
+  .button4:hover {
+    background-color: #829460;
+  }

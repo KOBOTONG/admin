@@ -40,11 +40,8 @@ if (!isset($_SESSION['admin_login'])) {
 
             <div class="text-center mt-2">
                 <h1>Booking Details </h1>
-                <form action="search.php" method="get" enctype="multipart/form-data">
-                    <br></br>
-                    <input type="text" name="value" placeholder="Booking licsenplate" >               
-                <button type="submit" name="search" value="search" class="button4">search </button>
-                    
+                
+            
                 </form>
             </div>
             <section class="content">
@@ -70,29 +67,33 @@ if (!isset($_SESSION['admin_login'])) {
                                 </tr>
                             </thead>
                             <?php
-                            
+                              if (isset($_GET['search'])) {
+                                $search_value = $_REQUEST['value'];
+                            } if (empty($search_value)) {
+                                echo "<h3 style='margin-top:2rem; text-align: center; color:red;'>Oops!!, can not find any data type someting</h3>";
+                            } else {
+                                $search_query = "SELECT * FROM booking WHERE usernamebook LIKE '%$search_value%'";
+            
 
-                            $select_post = "SELECT * FROM booking ";
+                                $run_query = mysqli_query($conn, $search_query);
 
-                            $query_post = mysqli_query($conn, $select_post);
+                                while ($search_row = mysqli_fetch_array($run_query)) {
 
-                            while ($row = mysqli_fetch_array($query_post)) {
-                                $id = $row['nobook'];
-                                $licsen = $row['usernamebook'];
-                                $name = $row['fnamebook'];
-                                $lname = $row['lnamebook'];
-                                $stmo = $row['stmonth'];
-                                $styer = $row['styear'];
-                                $tomo = $row['tomonth'];
-                                $toyer = $row['toyear'];
-                                $detail = $row['resultmy'];
-                                $status = $row['status'];
-                                $slip = $row['slip'];
+                                $id = $search_row['nobook'];
+                                $licsen = $search_row['usernamebook'];
+                                $name = $search_row['fnamebook'];
+                                $lname = $search_row['lnamebook'];
+                                $stmo = $search_row['stmonth'];
+                                $styer = $search_row['styear'];
+                                $tomo = $search_row['tomonth'];
+                                $toyer = $search_row['toyear'];
+                                $detail = $search_row['resultmy'];
+                                $status =$search_row['status'];
+                                $slip = $search_row['slip'];
 
                             ?>
 
                                 <tr>
-
                                     <td><?php echo $id; ?></td>
                                     <td><?php echo $licsen; ?></td>
                                     <td><?php echo $name; ?> <?php echo $lname; ?></td>
@@ -106,7 +107,8 @@ if (!isset($_SESSION['admin_login'])) {
 
                                 </tr>
                             <?php
-                            }  ?>
+                            }  
+                            }?>
                         </table>
                         <form action="logout.php">
                             <button name="submit" class="button1"> Log out</button>

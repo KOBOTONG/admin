@@ -54,3 +54,15 @@ button:hover {
   background-color: #2155CD;
   color: #E8E6E6;
 }
+button4{
+  background-color: #256D85;
+  border-radius:30px;
+  height:50px;
+  color: #F8EDE3;
+  font-weight:bold;
+  cursor:pointer;
+  transition: 5s;
+}
+button4:hover {
+  background-color: #829460;
+}
