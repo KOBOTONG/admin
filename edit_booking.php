@@ -86,15 +86,90 @@ if (isset($_POST['submit'])) {
                     <label>Lastname</label></p>
                     <input type="text" name="lnamebook" class="form-control" readonly value="<?php echo $lname; ?>"></p>
                     <label>Start Month</label></p>
-                    <input type="text" name="stmonth" class="form-control" value="<?php echo $stmo; ?>"></p>
+                    <!--<input type="text" name="stmonth" class="form-control" value="<?php echo $stmo; ?>"></p>-->
+                    <select name="stmonth" class="btn btn-success dropdown-toggle" >
+                    <option value="<?php echo $stmo; ?>"><?php echo $stmo; ?></option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select><br></br>
                     <label>Start Year</label></p>
-                    <input type="text" name="styear" class="form-control" value="<?php echo $styer; ?>"></p>
+                    <select name="styear" class="btn btn-success dropdown-toggle" >
+                    <option value="<?php echo $styer; ?>"><?php echo $styer; ?></option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+
+                    </select><br></br>
+                    <!--<input type="text" name="styear" class="form-control" value="<?php echo $styer; ?>"></p>-->
                     <label>To Month</label></p>
-                    <input type="text" name="tomonth" class="form-control" value="<?php echo $tomo; ?>"></p>
+                    <select name="tomonth" class="btn btn-success dropdown-toggle" >
+                    <option value="<?php echo $tomo; ?>"><?php echo $tomo; ?></option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select><br></br>
+                    <!--<input type="text" name="tomonth" class="form-control" value="<?php echo $tomo; ?>"></p>-->
                     <label>To Year</label></p>
-                    <input type="text" name="toyear" class="form-control" value="<?php echo $toyer; ?>"></p>
+                    <select name="toyear" class="btn btn-success dropdown-toggle" >
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                        <option value="2029">2029</option>
+                        <option value="2030">2030</option>
+                        <option value="2031">2031</option>
+                        <option value="2032">2032</option>
+
+                    </select><br></br>
+                    <!--<input type="text" name="toyear" class="form-control" value="<?php echo $toyer; ?>"></p>-->
+                    <label>Detail</label></p>
+                    
+                    <select name="detail" class="btn btn-success dropdown-toggle" >
+                    <option value="<?php echo $detail; ?>"><?php echo $detail; ?></option>
+                        <option value=" 1 Month 2800 Bath">1 Month 2800 Bath</option>
+                        <option value=" 2 Month 5600 Bath">2 Month 5600 Bath</option>
+                        <option value=" 3 Month 8400 Bath">3 Month 8400 Bath</option>
+                    </select><br></br>
                     <label>Status</label></p>
-                    <input type="text" name="status" class="form-control" value="<?php echo $status; ?>"></p>
+                    <!--<input type="text" name="status" class="form-control" value="<?php echo $status; ?>"></p>-->
+                    <div class="dropdown">
+                    <select name="status" class="btn btn-success dropdown-toggle"> 
+                    <option value="<?php echo $status; ?>"><?php echo $status; ?></option>
+                        <option value="Wait for booking">Wait for booking</option>
+                        <option value="Complete">Complete</option>
+                      
+                        
+                    </select></div><br></br>
                 
                         <br>
                         <input type="submit" name="submit" value="Update Now">

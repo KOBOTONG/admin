@@ -58,7 +58,6 @@ if (!isset($_SESSION['admin_login'])) {
                                     <th>Licsen Plate</th>
                                     <th>Name</th>
                                     <th>Mail</th>
-
                                     <th>Phone</th>
                                     <th>Idenficical</th>
                                     <th>vehicle</th>
