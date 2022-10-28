@@ -85,7 +85,7 @@ if (!isset($_SESSION['admin_login'])) {
                                 $styer = $row['styear'];
                                 $tomo = $row['tomonth'];
                                 $toyer = $row['toyear'];
-                                $detail = $row['resultmy'];
+                                $details = $row['resultmy'];
                                 $status = $row['status'];
                                 $slip = $row['slip'];
 
@@ -98,11 +98,11 @@ if (!isset($_SESSION['admin_login'])) {
                                     <td><?php echo $name; ?> <?php echo $lname; ?></td>
                                     <td><?php echo $stmo; ?> <?php echo $styer; ?></td>
                                     <td><?php echo $tomo; ?> <?php echo $toyer; ?></td>
-                                    <td><?php echo $detail; ?></td>
+                                    <td><?php echo $details; ?></td>
                                     <td><?php echo $status; ?></td>
                                     <td><img width="200" src="<?php echo $slip; ?>"></td>
                                     <td><a href="edit_booking.php?edit=<?php echo $id; ?>" class="btn btn-success">Edit</a></td>
-                                    <td><a href="del_booking.php?del=<?php echo $id; ?>" class="btn btn-warning">Delete</a></td>
+                                    <td><a href="del_booking.php?del=<?php echo $id; ?>" class="btn btn-danger">Delete</a></td>
 
                                 </tr>
                             <?php
