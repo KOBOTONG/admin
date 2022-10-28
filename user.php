@@ -29,7 +29,17 @@
                 $stmt->execute();
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
             }
-        ?>
+        ?><br>
+        
+        <img src="Admin-cuate.png"class = "img1" width="250px" >
+        <img src="Toggle-bro.png"class = "img2" width="250px" ></br>
+        <form action="info.php" >
+         <button name="submit" class="button"> Information Customer</button>
+     </form> 
+        
+         <form action="view_booking.php" >
+         <button name="submit" class="button2">Booking Details </button>
+     </form> 
         <h3 class="mt-4">Welcome, <?php echo $row['name'] . ' ' . $row['lastname'] ?></h3>
         <a href="logout.php" class="btn btn-danger">Logout</a>
     </div>
