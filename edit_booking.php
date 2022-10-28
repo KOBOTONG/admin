@@ -21,7 +21,7 @@ if (isset($_GET['edit'])) {
         $styer = $edit_row['styear'];
         $tomo = $edit_row['tomonth'];
         $toyer = $edit_row['toyear'];
-        $detail = $edit_row['resultmy'];
+        $details = $edit_row['resultmy'];
         $status = $edit_row['status'];
         $slip = $edit_row['slip'];
     }
@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
  $styer = $_POST['styear'];
  $tomo = $_POST['tomonth'];
  $toyer = $_POST['toyear'];
- $detail = $_POST['resultmy'];
+ $details = $_POST['resultmy'];
  $status = $_POST['status'];
 
 
@@ -151,14 +151,14 @@ if (isset($_POST['submit'])) {
                         <option value="2032">2032</option>
 
                     </select><br></br>
-                    <!--<input type="text" name="toyear" class="form-control" value="<?php echo $toyer; ?>"></p>-->
-                    <label>Detail</label></p>
                     
-                    <select name="detail" class="btn btn-success dropdown-toggle" >
-                    <option value="<?php echo $detail; ?>"><?php echo $detail; ?></option>
-                        <option value=" 1 Month 2800 Bath">1 Month 2800 Bath</option>
-                        <option value=" 2 Month 5600 Bath">2 Month 5600 Bath</option>
-                        <option value=" 3 Month 8400 Bath">3 Month 8400 Bath</option>
+                    <label>Detail</label></p> 
+                    <select name="details" class="btn btn-success dropdown-toggle">
+                    <option value="<?php echo $details; ?>"><?php echo $details; ?></option>
+                    
+                      <option value="1 Month 2800 Bath">1 Month 2800 Bath</option>
+                        <option value="2 Month 5600 Bath">2 Month 5600 Bath</option>
+                        <option value="3 Month 8400 Bath">3 Month 8400 Bath</option>
                     </select><br></br>
                     <label>Status</label></p>
                     <!--<input type="text" name="status" class="form-control" value="<?php echo $status; ?>"></p>-->
