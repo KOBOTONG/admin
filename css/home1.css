@@ -113,6 +113,7 @@ h1{
     font-weight:bold;
     cursor:pointer;
     transition: 0.5s;
+    left:50%;
   }
   .button4:hover {
     background-color: #829460;

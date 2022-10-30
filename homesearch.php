@@ -6,7 +6,7 @@
 ?>
 
 <link href="style.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" type="text/css" href="css/home.css">
+<link rel="stylesheet" type="text/css" href="css/homee.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Josefin+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -57,7 +57,7 @@
             <h1><?php echo $d; ?> <?php echo $t; ?> </h1> 
 	   <br></br>
        <form action="homesearch.php" method="get" enctype="multipart/form-data">
-                    <br></br>
+                  
                     <input type="text" name="value" placeholder="Booking licsenplate" >               
                 <button type="submit" name="search" value="search" class="button4">search </button>
                     
