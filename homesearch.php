@@ -55,8 +55,13 @@
         ?>
             <h1> Parking Details </h1>
             <h1><?php echo $d; ?> <?php echo $t; ?> </h1> 
-	   
-  
+	   <br></br>
+       <form action="homesearch.php" method="get" enctype="multipart/form-data">
+                    <br></br>
+                    <input type="text" name="value" placeholder="Booking licsenplate" >               
+                <button type="submit" name="search" value="search" class="button4">search </button>
+                    
+                </form>
 	<?php
 
 $values=array();
@@ -93,55 +98,60 @@ $values=array();
 
 
 <?php
-$ctr=0;
- if (isset($_GET['search'])) {
-  $search_value = $_REQUEST['value'];
-}
-else {
-  $search_query = "SELECT * FROM booking WHERE usernamebook LIKE '%$search_value%'";
+if (isset($_GET['search'])) {
+    $search_value = $_REQUEST['value'];
+} if (empty($search_value)) {
+    echo "<h3 style='margin-top:2rem; text-align: center; color:red;'>Oops!!, can not find any data type someting</h3>";
+} else {
+    $search_query = "SELECT * FROM booking WHERE usernamebook LIKE '%$search_value%'";
 
 
-  $run_query = mysqli_query($conn, $search_query);
+    $run_query = mysqli_query($conn, $search_query);
 
-  while ($search_row = mysqli_fetch_array($run_query)) {
+    while ($search_row = mysqli_fetch_array($run_query)) {
 
-  $id = $search_row['nobook'];
-  $licsen = $search_row['usernamebook'];
-  $name = $search_row['fnamebook'];
-  $lname = $search_row['lnamebook'];
-  $stmo = $search_row['stmonth'];
-  $styer = $search_row['styear'];
-  $tomo = $search_row['tomonth'];
-  $toyer = $search_row['toyear'];
-  $detail = $search_row['resultmy'];
-  $status =$search_row['status'];
-  $slip = $search_row['slip'];
+    $id = $search_row['nobook'];
+    $licsen = $search_row['usernamebook'];
+    $name = $search_row['fnamebook'];
+    $lname = $search_row['lnamebook'];
+    $stmo = $search_row['stmonth'];
+    $styer = $search_row['styear'];
+    $tomo = $search_row['tomonth'];
+    $toyer = $search_row['toyear'];
+    $detail = $search_row['resultmy'];
+    $status =$search_row['status'];
+    $slip = $search_row['slip'];
 
 ?>
-     <tr>
-                                    <td><?php echo $id; ?></td>
-                                    <td><?php echo $licsen; ?></td>
-                                    <td><?php echo $name; ?> <?php echo $lname; ?></td>
-                                    <td><?php echo $stmo; ?> <?php echo $styer; ?></td>
-                                    <td><?php echo $tomo; ?> <?php echo $toyer; ?></td>
-                                    <td><?php echo $detail; ?></td>
-                                    <td><?php echo $status; ?></td>
-                                    <td><img width="200" src="<?php echo $slip; ?>"></td>
-                                    <td><a href="edit_booking.php?edit=<?php echo $id; ?>" class="btn btn-success">Edit</a></td>
-                                    <td><a href="del_booking.php?del=<?php echo $id; ?>" class="btn btn-warning">Delete</a></td>
 
-                                </tr>
+    <tr>
+        <td><?php echo $id; ?></td>
+        <td><?php echo $licsen; ?></td>
+        <td><?php echo $name; ?> <?php echo $lname; ?></td>
+        
+        <td><?php echo $stmo; ?></td>
+        <td><?php echo $styer; ?></td>
+        <td><?php echo $tomo; ?> </td>
+        <td> <?php echo $toyer; ?></td>
+        
+        <td><?php echo $status; ?></td>
+
+         
           <?php
-            if (in_array($r['nobook'], $values))
+            if (in_array($id, $values))
             {
               ?>
-          <td><a class="btn btn-danger"  href="update.php?statusid=<?php echo $r['nobook']; ?>&status=<?php echo $r['usernamebook']; ?>" onclick="return unsub();"><?php echo "Check-out" ?></a></td>
+
+          <td><a class="btn btn-danger"  href="update.php?statusid=<?php echo $id; ?>&status=<?php echo $licsen; ?>" onclick="return unsub();"><?php echo "Check-out" ?></a></td>
                      <?php } else { ?>
-                     <td><a class="btn btn-primary"  href="update.php?statusid=<?php echo $r['nobook']; ?>" onclick="return sub();"><?php echo "Check-in" ?></a></td>
-                  </tr>
+                     <td><a class="btn btn-primary"  href="update.php?statusid=<?php echo $id; ?>" onclick="return sub();"><?php echo "Check-in" ?></a></td>
+       
                     
-    </tbody> <?php }  } }?>
+    </tbody> 
+    <?php } } } ?>
+    
   </table> 
+  
   <form action="logout.php">
                             <button name="submit" class="button1"> Log out</button>
 
@@ -153,4 +163,3 @@ else {
     </div>
 	</div>
   </div>
-	

@@ -67,7 +67,7 @@ if (!isset($_SESSION['admin_login'])) {
                                 </tr>
                             </thead>
                             <?php
-                              if (isset($_GET['search'])) {
+                            if (isset($_GET['search'])) {
                                 $search_value = $_REQUEST['value'];
                             } if (empty($search_value)) {
                                 echo "<h3 style='margin-top:2rem; text-align: center; color:red;'>Oops!!, can not find any data type someting</h3>";
