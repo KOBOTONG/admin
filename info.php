@@ -62,7 +62,7 @@
                    
                     <th>Phone</th>
                     <th>Idenficical</th>
-                    <th>vehicle</th>
+                    <th>Vehicle</th>
                     
                 </tr>
                 </thead>
@@ -95,7 +95,7 @@
                         <td><?php echo $phone; ?></td>
                         <td><img width="200"  src="<?php echo $iden; ?>"></td>
                         <td><img width="200"  src="<?php echo $vehi; ?>"></td>
-                        <td><a href="del_info.php?del=<?php echo $id; ?>" class="btn btn-danger">Delete</a></td>
+                        
                                  
                 </tr>   
 <?php
