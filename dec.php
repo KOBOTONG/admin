@@ -17,46 +17,61 @@ if (!isset($_SESSION['admin_login'])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>View Booking</title>
-        <link rel="stylesheet" type="text/css" href="css/book6.css">
+        <title>Month December</title>
+        <link rel="stylesheet" type="text/css" href="css/book5.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Josefin+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
     </head>
 
     <body>
-        
-            <form action="admin.php">
-                <button name="submit" class="button3">Home</button>
-            </form>
-            <form action="jan.php">
+
+        <form action="admin.php">
+            <button name="submit" class="button3">Home</button>
+        </form>
+        <form action="jan.php">
                 <button name="submit" class="button"> Months</button>
             </form>
 
-            <form action="view_booking.php">
-                <button name="submit" class="button2">Booking Details </button>
-            </form>
 
-            <form action="view_wait.php">
-                <button name="submit" class="button5">Wait for booking</button>
-            </form>
-            <form action="view_com.php">
-                <button name="submit" class="button6">Booking Complete</button>
-            </form>
-          <!---<form action="view_personnel.php">
-                <button name="submit" class="button7">Personnel</button>
-            </form>--->
+        <form action="view_booking.php">
+            <button name="submit" class="button2">Booking Details </button>
+        </form>
+
+        <form action="view_wait.php">
+            <button name="submit" class="button5">Wait for booking</button>
+        </form>
+        <form action="view_com.php">
+            <button name="submit" class="button6">Booking Complete</button>
+        </form>
 
 
-            <div class="text-center mt-2">
-                <h1>Booking Details </h1>
-                <form action="search.php" method="get" enctype="multipart/form-data">
+        <div class="text-center mt-2">
+            <h1>Month December</h1>
+            <br>
+
+<a href="jan.php"><input class="btn btn-info btn-sm" value="January"></a>
+<a href="feb.php"><input class="btn btn-warning btn-sm" value="February"></a>
+<a href="mar.php"><input class="btn btn-info btn-sm" value="March"></a>
+
+<a href="apr.php"><input class="btn btn-warning btn-sm" value="April"></a>
+<a href="may.php"><input class="btn btn-info btn-sm" value="May"></a>
+<a href="jun.php"><input class="btn btn-warning btn-sm" value="June"></a>
+<br> <br>
+<a href="ju.php"><input class="btn btn-info btn-sm" value="July"></a>
+<a href="aug.php"><input class="btn btn-warning btn-sm" value="August"></a>
+<a href="sep.php"><input class="btn btn-info btn-sm" value="September"></a>
+<a href="oct.php"><input class="btn btn-warning btn-sm" value="October"></a>
+<a href="nov.php"><input class="btn btn-info btn-sm" value="November"></a>
+<a href="dec.php"><input class="btn btn-warning btn-sm" value="December"></a>
+
+            <!---   <form action="search_com.php" method="get" enctype="multipart/form-data">
                     <br></br>
                     <input type="text" name="value" placeholder="Booking licsenplate" >               
                 <button type="submit" name="search" value="search" class="button4">search </button>
                     
-                </form>
-            
+                </form>-->
+
             <section class="content">
                 <div class="content__grid">
 
@@ -80,9 +95,12 @@ if (!isset($_SESSION['admin_login'])) {
                                 </tr>
                             </thead>
                             <?php
-                            
 
-                            $select_post = "SELECT * FROM booking ";
+
+                            $select_post = "SELECT *
+                            FROM booking 
+                            WHERE stmonth = 'December' 
+                           ";
 
                             $query_post = mysqli_query($conn, $select_post);
 

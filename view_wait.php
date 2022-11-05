@@ -29,9 +29,10 @@ if (!isset($_SESSION['admin_login'])) {
             <form action="admin.php">
                 <button name="submit" class="button3">Home</button>
             </form>
-            <form action="info.php">
-                <button name="submit" class="button"> Information Customer</button>
+            <form action="jan.php">
+                <button name="submit" class="button"> Months</button>
             </form>
+
 
             <form action="view_booking.php">
                 <button name="submit" class="button2">Booking Details </button>
