@@ -47,12 +47,12 @@ if (!isset($_SESSION['admin_login'])) {
 
             <div class="text-center mt-2">
                 <h1>Booking Complete </h1>
-                <form action="search_com.php" method="get" enctype="multipart/form-data">
+             <!---   <form action="search_com.php" method="get" enctype="multipart/form-data">
                     <br></br>
                     <input type="text" name="value" placeholder="Booking licsenplate" >               
                 <button type="submit" name="search" value="search" class="button4">search </button>
                     
-                </form>
+                </form>-->
             
             <section class="content">
                 <div class="content__grid">

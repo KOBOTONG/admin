@@ -17,8 +17,8 @@ if (!isset($_SESSION['admin_login'])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>View Booking</title>
-        <link rel="stylesheet" type="text/css" href="css/book3.css">
+        <title>Infomation</title>
+        <link rel="stylesheet" type="text/css" href="css/book4.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Josefin+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
 
@@ -35,6 +35,12 @@ if (!isset($_SESSION['admin_login'])) {
 
             <form action="view_booking.php">
                 <button name="submit" class="button2">Booking Details </button>
+            </form>
+            <form action="view_wait.php">
+                <button name="submit" class="button5">Wait for booking</button>
+            </form>
+            <form action="view_com.php">
+                <button name="submit" class="button6">Booking Complete</button>
             </form>
 
 
@@ -61,7 +67,7 @@ if (!isset($_SESSION['admin_login'])) {
                                     <th>Phone</th>
                                     <th>Idenficical</th>
                                     <th>Vehicle</th>
-                                    <th>Delete</th>
+                                   
                                 </tr>
                             </thead>
                             <?php
@@ -98,7 +104,7 @@ if (!isset($_SESSION['admin_login'])) {
                                         <td><?php echo $phone; ?></td>
                                         <td><img width="200" src="<?php echo $iden; ?>"></td>
                                         <td><img width="200" src="<?php echo $vehi; ?>"></td>
-                                        <td><a href="del_info.php?del=<?php echo $id; ?>" class="btn btn-warning">Delete</a></td>
+                                        
 
 
 

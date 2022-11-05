@@ -47,12 +47,12 @@ if (!isset($_SESSION['admin_login'])) {
 
             <div class="text-center mt-2">
                 <h1>Wait for Booking</h1>
-                <form action="search.php" method="get" enctype="multipart/form-data">
+                <!--<form action="search_wait.php" method="get" enctype="multipart/form-data">
                     <br></br>
                     <input type="text" name="value" placeholder="Booking licsenplate" >               
                 <button type="submit" name="search" value="search" class="button4">search </button>
                     
-                </form>
+                </form>-->
             
             <section class="content">
                 <div class="content__grid">
