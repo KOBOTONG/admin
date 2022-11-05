@@ -43,6 +43,9 @@ if (!isset($_SESSION['admin_login'])) {
             <form action="view_com.php">
                 <button name="submit" class="button6">Booking Complete</button>
             </form>
+          <!---<form action="view_personnel.php">
+                <button name="submit" class="button7">Personnel</button>
+            </form>--->
 
 
             <div class="text-center mt-2">

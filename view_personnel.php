@@ -17,7 +17,7 @@ if (!isset($_SESSION['admin_login'])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Booking Complete</title>
+        <title>View Booking</title>
         <link rel="stylesheet" type="text/css" href="css/book4.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Josefin+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
@@ -46,14 +46,18 @@ if (!isset($_SESSION['admin_login'])) {
 
 
             <div class="text-center mt-2">
-                <h1>Booking Complete </h1>
-                <form action="search_com.php" method="get" enctype="multipart/form-data">
+            <br><br>
+                <h1>Personnel</h1>
+                
+
+                <form action="search_per.php" method="get" enctype="multipart/form-data">
                     <br></br>
-                    <input type="text" name="value" placeholder="Booking licsenplate" >               
+                    <input type="text" name="value" placeholder="Personnel" >               
                 <button type="submit" name="search" value="search" class="button4">search </button>
                     
                 </form>
-            
+                <br><br>
+                <td><a href="add_per.php" class="btn btn-success" >Add Personnel</a></td>
             <section class="content">
                 <div class="content__grid">
 
@@ -65,54 +69,38 @@ if (!isset($_SESSION['admin_login'])) {
 
                                 <tr>
                                     <th>NO</th>
-                                    <th>Licsen Plate</th>
+                                    <th>Email</th>
                                     <th>Name</th>
-                                    <th>Start</th>
-                                    <th>End</th>
-                                    <th>Details</th>
-                                    <th>Status</th>
-                                    <th>Slip</th>
+                                    <th>Phone number</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
+                                    
                                 </tr>
                             </thead>
                             <?php
                             
 
-                            $select_post = "SELECT *
-                            FROM booking 
-                            WHERE status = 'Complete' 
-                           ";
+                            $select_post = "SELECT * FROM personnnel WHERE role = 'personel' ";
 
                             $query_post = mysqli_query($conn, $select_post);
 
                             while ($row = mysqli_fetch_array($query_post)) {
-                                $id = $row['nobook'];
-                                $licsen = $row['usernamebook'];
-                                $name = $row['fnamebook'];
-                                $lname = $row['lnamebook'];
-                                $stmo = $row['stmonth'];
-                                $styer = $row['styear'];
-                                $tomo = $row['tomonth'];
-                                $toyer = $row['toyear'];
-                                $details = $row['resultmy'];
-                                $status = $row['status'];
-                                $slip = $row['slip'];
-
+                                $id = $row['id'];
+                                $email = $row['email'];
+                                $name = $row['name'];
+                                $lname = $row['lastname'];
+                                $phonenumber = $row['phonenumber'];
+                                
                             ?>
 
                                 <tr>
 
                                     <td><?php echo $id; ?></td>
-                                    <td><?php echo $licsen; ?></td>
+                                    <td><?php echo $email; ?></td>
                                     <td><?php echo $name; ?> <?php echo $lname; ?></td>
-                                    <td><?php echo $stmo; ?> <?php echo $styer; ?></td>
-                                    <td><?php echo $tomo; ?> <?php echo $toyer; ?></td>
-                                    <td><?php echo $details; ?></td>
-                                    <td><?php echo $status; ?></td>
-                                    <td><img width="200" src="<?php echo $slip; ?>"></td>
-                                    <td><a href="edit_booking.php?edit=<?php echo $id; ?>" class="btn btn-success">Edit</a></td>
-                                    <td><a href="del_booking.php?del=<?php echo $id; ?>" class="btn btn-danger">Delete</a></td>
+                                    <td><?php echo $phonenumber; ?> 
+                                    <td><a href="edit_per.php?edit=<?php echo $id; ?>" class="btn btn-success">Edit</a></td>
+                                    <td><a href="del_per.php?del=<?php echo $id; ?>" class="btn btn-danger">Delete</a></td>
 
                                 </tr>
                             <?php

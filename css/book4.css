@@ -92,6 +92,26 @@ h1{
     background-color: #cdf91e;
     color: #000000;
   }
+  .button7{
+    position: absolute;
+    background-color: #ffb050;
+    border-radius:30px;
+    height:50px;
+    width: 210px;
+    color: #000000;
+    font-weight:bold;
+    cursor:pointer;
+    transition: 0.8s;
+    font-family: 'Josefin Sans', sans-serif;
+    right: 10%;
+    top: 10%;
+    
+   
+  }
+  .button7:hover {
+    background-color: #cdf91e;
+    color: #000000;
+  }
   .button3 {position: absolute;
     background-color: #ffb050;
     border-radius:30px;
